@@ -1,7 +1,6 @@
 # 🚀 Kelfino's Portfolio
 
-![Portfolio Preview](/public/assets/image/banner1.png)
-*(Ganti link gambar di atas dengan screenshot websitemu nanti)*
+![Portfolio Preview](/public/assets/image/landingpage.png)
 
 Welcome to my personal portfolio repository! This website is designed to showcase my projects, professional journey, and technical skills as a **Computer Science Student** and **Full Stack Developer**.
 
