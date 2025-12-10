@@ -4,6 +4,7 @@ import Image from "next/image";
 
 // Daftar teks yang akan muncul bergantian
 const roles = [
+  "ME",
   "KELFINO.",
   "A FRONTEND DEV.",
   "A BACKEND DEV.",
