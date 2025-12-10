@@ -98,9 +98,9 @@ export default function Home() {
                   src="/assets/image/g2.png" 
                   alt="Kelfino" 
                   fill
-                  className="w-[80%] aspect-square object-cover rounded-full shadow-2xl shadow-black/50 grayscale-[20%] contrast-110 transition-all duration-400 group-hover:grayscale-0 group-hover:scale-105 mx-auto relative z-10" 
+                  className="object-cover rounded-full shadow-2xl shadow-black/50 grayscale-[20%] contrast-110 transition-all duration-400 group-hover:grayscale-0 group-hover:scale-105 mx-auto relative z-10" 
                 />
-                <div className="absolute top-5 left-5 md:left-10 w-[85%] h-[85%] border-2 border-brand-red/30 rounded-full -z-0"></div>
+                <div className="absolute top-5 left-5 md:left-10 w-[100%] h-[100%] border-2 border-brand-red/30 rounded-full -z-0"></div>
             </div>
         </div>
       </div>
