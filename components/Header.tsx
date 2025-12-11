@@ -34,9 +34,6 @@ export default function Header() {
              </li>
           ))}
           <li className="hidden md:block ml-6">
-            <span className="bg-brand-dark-red/20 text-brand-light-red px-4 py-2 rounded-full border border-brand-light-red/30 text-xs font-semibold tracking-wider">
-              AVAILABLE
-            </span>
           </li>
         </ul>
       </div>
