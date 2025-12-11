@@ -4,29 +4,22 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
-
       const sections = document.querySelectorAll('section');
-      
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
         if (window.scrollY >= (sectionTop - 250)) {
           const id = section.getAttribute('id');
           if (id) setActiveSection(id);
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -36,23 +29,24 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[9999] py-6 transition-all duration-300 ${scrolled ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-dark-red/20 py-4' : 'bg-transparent'}`}>
+    <header 
+      className={`fixed top-0 left-0 w-full z-[9999] py-6 animate-fade-in-down
+      ${scrolled ? 'bg-brand-dark/95 backdrop-blur-md border-b border-brand-dark-red/20 py-4' : 'bg-transparent'}
+      `}
+    >
       <div className="w-[90%] max-w-[1200px] mx-auto px-5 flex justify-between items-center relative">
         <a href="#home" className="text-2xl font-extrabold text-white flex items-center relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-[3px] after:bg-brand-red z-[10001]">
           FARELINO <span className="text-brand-red ml-1">KELFINO.</span>
         </a>
         
-        {/* Hamburger Menu untuk Mobile */}
         <div className="md:hidden text-white text-2xl cursor-pointer z-[10001]" onClick={() => setMenuOpen(!menuOpen)}>
           <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </div>
 
-        {/* Menu Items */}
         <ul className={`fixed md:relative top-0 ${menuOpen ? 'right-0' : '-right-full'} md:right-0 w-4/5 md:w-auto h-screen md:h-auto bg-[#0a0a0a]/95 md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-end gap-10 pt-24 md:pt-0 transition-all duration-300 border-l border-brand-red/20 md:border-none backdrop-blur-xl md:backdrop-blur-none z-[10000]`}>
           {['Home', 'Skills', 'Journey', 'Work', 'About', 'Contact'].map((item) => {
              const sectionId = getSectionId(item);
              const isActive = activeSection === sectionId;
-
              return (
                <li key={item}>
                  <a href={`#${sectionId}`} 

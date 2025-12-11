@@ -24,7 +24,8 @@ const config: Config = {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-green': 'pulse-green 2s infinite cubic-bezier(0.66, 0, 0, 1)',
-        'scroll': 'scroll 30s linear infinite',
+        'scroll': 'scroll 20s linear infinite',
+        'fade-in-down': 'fadeInDown 1.2s ease-out forwards',
       },
       keyframes: {
         float: {
@@ -38,6 +39,10 @@ const config: Config = {
         scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         }
       }
     },

@@ -23,7 +23,7 @@ const projectsData = [
     {
         id: 'BMS',
         title: 'Bakery Management System',
-        role: 'Marketing & Strategy',
+        role: 'UI/UX, Front End, Back End',
         img: '/assets/image/project3.jpg',
         desc: 'A SaaS platform to streamline bakery operations and boost sales.',
         tech: ['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP'],
@@ -50,13 +50,11 @@ export default function FeaturedWork() {
     <section id="featured" className="py-24 bg-brand-dark-charcoal relative">
       <div className="w-[90%] max-w-[1200px] mx-auto px-5">
         
-        {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 animate-on-scroll gap-4">
             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-brand-red after:to-brand-light-red">
                 FEATURED WORK
             </h2>
             
-            {/* LINK KE PROFIL GITHUB UTAMA */}
             <a 
                 href="https://github.com/kelfinofarelino?tab=repositories" 
                 target="_blank" 
@@ -66,12 +64,10 @@ export default function FeaturedWork() {
             </a>
         </div>
 
-        {/* Grid Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projectsData.map((project) => (
                 <div key={project.id} className="group bg-[#141414] rounded-2xl overflow-hidden border border-white/10 hover:-translate-y-2.5 hover:border-brand-red transition-all duration-400 flex flex-col h-full animate-on-scroll">
                     
-                    {/* Klik Gambar -> Buka Modal */}
                     <div onClick={() => openProject(project)} className="h-[220px] w-full overflow-hidden relative cursor-pointer">
                         <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
                     </div>
@@ -84,7 +80,6 @@ export default function FeaturedWork() {
                             <p className="line-clamp-3">{project.desc}</p>
                         </div>
 
-                        {/* Klik Tombol -> Buka Modal */}
                         <button 
                             onClick={() => openProject(project)} 
                             className="text-brand-red font-bold text-sm uppercase self-start hover:text-brand-light-red hover:tracking-wide transition-all flex items-center gap-2 mt-auto"
@@ -97,25 +92,20 @@ export default function FeaturedWork() {
         </div>
       </div>
 
-      {/* --- MODAL OVERLAY (TETAP ADA) --- */}
       {modalOpen && activeProject && (
         <div className="fixed inset-0 bg-black/85 z-[10000] flex justify-center items-center backdrop-blur-sm animate-fade-in p-4" onClick={closeModal}>
             <div className="bg-[#141414] w-full max-w-[700px] max-h-[90vh] rounded-2xl border border-white/10 relative overflow-y-auto transform transition-transform shadow-2xl shadow-brand-red/10" onClick={(e) => e.stopPropagation()}>
                 
-                {/* Tombol Close */}
                 <span className="absolute top-4 right-5 text-3xl text-white cursor-pointer hover:text-brand-red z-10" onClick={closeModal}>&times;</span>
                 
-                {/* Gambar Modal */}
                 <div className="w-full h-[250px] md:h-[350px] overflow-hidden bg-black">
                     <img src={activeProject.img} alt="Project" className="w-full h-full object-contain md:object-cover"/>
                 </div>
                 
-                {/* Isi Modal */}
                 <div className="p-8">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                         <h2 className="font-syne text-3xl text-white font-bold">{activeProject.title}</h2>
                         
-                        {/* LINK KE GITHUB PROYEK SPESIFIK */}
                         <a 
                             href={activeProject.linkCode} 
                             target="_blank"

@@ -19,10 +19,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Utilities Custom */
 .text-shadow { text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
 
-/* Animation Classes */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -33,7 +31,6 @@ html {
   transform: translateY(0);
 }
 
-/* Timeline Custom Styles (Susah di-convert ke utility murni) */
 .timeline::before {
   content: '';
   position: absolute;

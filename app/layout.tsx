@@ -6,7 +6,6 @@ const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["700"], variable: '--font-syne' });
 
 export const metadata: Metadata = {
-  // PENTING: Tambahkan ini agar gambar OG (Preview Link) terbaca di sosmed
   metadataBase: new URL('https://kelfino.my.id'),
 
   title: {

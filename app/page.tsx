@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
 import HomeSection from "@/components/Home";
@@ -11,6 +11,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Page() {
+  const [isSplashFinished, setIsSplashFinished] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.animate-on-scroll');
@@ -29,8 +31,10 @@ export default function Page() {
 
   return (
     <main>
-      <SplashScreen />
-      <Header />
+      <SplashScreen onFinish={() => setIsSplashFinished(true)} />
+      
+      {isSplashFinished && <Header />}
+
       <HomeSection />
       <Skills />
       <Journey />

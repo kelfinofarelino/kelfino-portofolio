@@ -5,9 +5,6 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block mb-16 after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-brand-red after:to-brand-light-red animate-on-scroll">ABOUT ME</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                {/* TEXT CONTAINER */}
-                {/* Mobile: order-2 (di bawah gambar) | Desktop: lg:order-1 (di kiri) */}
                 <div className="animate-on-scroll order-2 lg:order-1">
                     <h3 className="text-3xl font-bold mt-8 mb-6 text-white">
                         <strong>Leveling Up in Tech ᗧ•••👻</strong>
@@ -32,9 +29,6 @@ export default function About() {
                         ))}
                     </div>
                 </div>
-
-                {/* IMAGE CONTAINER */}
-                {/* Mobile: order-1 (di atas teks) | Desktop: lg:order-2 (di kanan) */}
                 <div className="animate-on-scroll order-1 lg:order-2">
                     <div className="relative w-full max-w-[500px] mx-auto group">
                         <img src="/assets/image/about.png" alt="About" className="w-full h-auto rounded-2xl shadow-2xl shadow-black/40 contrast-110 transition-transform duration-400 group-hover:scale-105"/>

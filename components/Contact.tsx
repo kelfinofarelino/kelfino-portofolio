@@ -12,9 +12,7 @@ export default function Contact() {
 
     const formData = new FormData(e.currentTarget);
     
-    // --- GANTI INI DENGAN ACCESS KEY DARI EMAIL KAMU ---
     formData.append("access_key", "80c93f3c-22a2-459d-addb-86ea0cdc0838"); 
-    // ---------------------------------------------------
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -26,7 +24,7 @@ export default function Contact() {
 
       if (data.success) {
         setResult("success");
-        (e.target as HTMLFormElement).reset(); // Bersihkan form
+        (e.target as HTMLFormElement).reset();
       } else {
         setResult("error");
         console.error("Error:", data);
@@ -36,7 +34,6 @@ export default function Contact() {
       console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
-      // Hilangkan pesan sukses setelah 5 detik
       setTimeout(() => setResult(""), 5000);
     }
   };
@@ -71,7 +68,6 @@ export default function Contact() {
 
                 <div className="animate-on-scroll">
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* Input nama name="name" itu penting untuk Web3Forms */}
                         <div>
                             <label className="block mb-2 font-semibold text-white">Full Name</label>
                             <input type="text" name="name" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all" required placeholder="Farelino Kelfino"/>
@@ -85,7 +81,6 @@ export default function Contact() {
                             <textarea name="message" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all min-h-[150px]" required placeholder="Hello Kelfino..."></textarea>
                         </div>
 
-                        {/* Tombol dengan logika loading */}
                         <button 
                             type="submit" 
                             disabled={isSubmitting}
@@ -102,7 +97,6 @@ export default function Contact() {
                             )}
                         </button>
 
-                        {/* Pesan Sukses / Gagal */}
                         {result === "success" && (
                             <div className="p-4 bg-green-500/20 border border-green-500 text-green-500 rounded text-center font-bold">
                                 Message Sent Successfully!

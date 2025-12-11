@@ -16,13 +16,10 @@ export default function Journey() {
           {items.map((item, index) => (
             <div key={index} className={`timeline-item flex ${index % 2 === 0 ? 'justify-center md:justify-start md:pr-[calc(50%+30px)]' : 'justify-center md:justify-end md:pl-[calc(50%+30px)]'} mb-16 relative pl-[70px] md:pl-0 animate-on-scroll`}>
               
-              {/* --- LOGO DI TENGAH GARIS (NEW) --- */}
-              {/* Posisi: Mobile di kiri (30px), Desktop di tengah (50%) */}
               <div className="absolute top-0 left-[30px] -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 rounded-full border-4 border-brand-dark overflow-hidden z-20 shadow-lg bg-white">
                  <img src={`/assets/image/${item.logo}`} alt="Logo" className="w-full h-full object-contain" />
               </div>
               
-              {/* Kartu Konten */}
               <div className="timeline-content relative w-full max-w-[500px] bg-brand-charcoal rounded-2xl border border-white/5 overflow-hidden flex flex-col hover:-translate-y-1 hover:border-brand-red/30 hover:shadow-xl transition-all">
                 <div className="w-full h-[200px] bg-[#333]">
                   <img src={`/assets/image/${item.img}`} alt="Banner" className="w-full h-full object-cover"/>

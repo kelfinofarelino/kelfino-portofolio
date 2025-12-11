@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 
-// Daftar teks yang akan muncul bergantian
 const roles = [
   "ME",
   "KELFINO.",
@@ -15,7 +14,6 @@ const roles = [
 ];
 
 export default function Home() {
-  // --- LOGIKA ANIMASI KETIK (START) ---
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -47,21 +45,17 @@ export default function Home() {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [displayedText, isDeleting, currentRoleIndex, typingSpeed]);
-  // --- LOGIKA ANIMASI KETIK (END) ---
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden bg-gradient-to-br from-brand-dark to-brand-charcoal">
       <div className="w-[90%] max-w-[1200px] mx-auto px-5 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-        {/* --- BAGIAN TEKS (ORDER-2 di HP, ORDER-1 di Desktop) --- */}
         <div className="z-10 animate-on-scroll order-2 lg:order-1 text-center lg:text-left">
-            {/* Status Badge */}
             <div className="inline-flex items-center gap-2.5 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full text-green-500 text-sm font-semibold mb-5 hover:-translate-y-0.5 transition-all cursor-default">
                 <div className="w-2 h-2 bg-green-500 rounded-full relative after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:rounded-full after:bg-green-500 after:animate-pulse-green after:-z-10"></div>
                 <span>Available for Work</span>
             </div>
 
-            {/* Judul Utama dengan Animasi Ketik */}
             <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6">
                 HELLO WORLD!<br/>
                 THIS IS <span className="bg-gradient-to-r from-brand-red to-brand-light-red bg-clip-text text-transparent">
@@ -76,7 +70,6 @@ export default function Home() {
                 Building my path in Tech & Creative Media industries.
             </p>
 
-            {/* Role Tags */}
             <div className="flex flex-wrap gap-4 mb-12 justify-center lg:justify-start">
                 {['UI/UX Designer', 'Full Stack Developer', 'Content Creator', 'Digital Marketer', 'Data Analyst', 'Strategist'].map((role) => (
                     <span key={role} className="bg-[#2a2a2a]/70 text-brand-light-gray px-5 py-2.5 rounded-full text-sm font-semibold border border-white/5 hover:bg-brand-red hover:text-white hover:-translate-y-1 transition-all cursor-default">
@@ -91,11 +84,7 @@ export default function Home() {
             </a>
         </div>
 
-        {/* --- BAGIAN FOTO (ORDER-1 di HP, ORDER-2 di Desktop) --- */}
         <div className="relative z-10 animate-float flex justify-center animate-on-scroll order-1 lg:order-2">
-            {/* PERUBAHAN UKURAN:
-                max-w-[500px] diganti jadi max-w-[320px] (HP) dan lg:max-w-[420px] (Laptop) 
-            */}
             <div className="relative w-full max-w-[320px] lg:max-w-[420px] aspect-square group">
                 <Image 
                   src="/assets/image/g2.png" 
