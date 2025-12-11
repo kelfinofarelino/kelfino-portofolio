@@ -4,7 +4,7 @@
 
 Welcome to my personal portfolio repository! This website is designed to showcase my projects, professional journey, and technical skills as a **Computer Science Student** and **Full Stack Developer**.
 
-🔗 **Live Demo:** [https://kelfino-portfolio.vercel.app](https://kelfino-portofolio.vercel.app)
+🔗 **Live Demo:** [https://kelfino.my.id](https://kelfino.my.id)
 
 ## 🛠️ Tech Stack
 
