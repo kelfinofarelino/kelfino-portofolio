@@ -1,11 +1,12 @@
 "use client";
+import { useState } from 'react';
 
 const projectsData = [
     {
         id: 'SAD',
         title: 'Stroke Analysis Data',
         role: 'Data Analytics',
-        img: '/assets/image/project1.png',
+        img: '/assets/image/project1.jpg',
         desc: 'Health data analysis using Python & Pandas for stroke prediction.',
         tech: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
         linkCode: 'https://github.com/kelfinofarelino/', 
@@ -14,7 +15,7 @@ const projectsData = [
         id: 'DONOXYGEN',
         title: 'Donoxygen',
         role: 'UI/UX, Front End',
-        img: '/assets/image/project2.png',
+        img: '/assets/image/project2.jpg',
         desc: 'A community platform for replanting trees through donations to restore oxygen.',
         tech: ['Figma', 'HTML', 'CSS', 'JS', 'Bootstrap', 'PHP'],
         linkCode: 'https://github.com/kelfinofarelino/donoxygen-website',
@@ -23,7 +24,7 @@ const projectsData = [
         id: 'BMS',
         title: 'Bakery Management System',
         role: 'Marketing & Strategy',
-        img: '/assets/image/project3.png',
+        img: '/assets/image/project3.jpg',
         desc: 'A SaaS platform to streamline bakery operations and boost sales.',
         tech: ['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP'],
         linkCode: 'https://github.com/kelfinofarelino/bakery-management-system',
@@ -31,6 +32,20 @@ const projectsData = [
 ];
 
 export default function FeaturedWork() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<any>(null);
+
+  const openProject = (project: any) => {
+    setActiveProject(project);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <section id="featured" className="py-24 bg-brand-dark-charcoal relative">
       <div className="w-[90%] max-w-[1200px] mx-auto px-5">
@@ -56,39 +71,80 @@ export default function FeaturedWork() {
             {projectsData.map((project) => (
                 <div key={project.id} className="group bg-[#141414] rounded-2xl overflow-hidden border border-white/10 hover:-translate-y-2.5 hover:border-brand-red transition-all duration-400 flex flex-col h-full animate-on-scroll">
                     
-                    {/* Image Link (Klik gambar juga bisa ke Github) */}
-                    <a href={project.linkCode} target="_blank" className="h-[220px] w-full overflow-hidden relative block cursor-pointer">
+                    {/* Klik Gambar -> Buka Modal */}
+                    <div onClick={() => openProject(project)} className="h-[220px] w-full overflow-hidden relative cursor-pointer">
                         <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
-                    </a>
+                    </div>
 
                     <div className="p-6 flex-grow flex flex-col">
                         <h3 className="text-xl font-bold text-[#EA3232] font-syne mb-2.5">{project.title}</h3>
                         
                         <div className="text-brand-gray text-[0.95rem] leading-relaxed mb-5 flex-grow">
                             <strong className="text-brand-red block mb-2">{project.role}</strong>
-                            <p className="mb-4">{project.desc}</p>
-                            
-                            {/* Tech Stack Tags (Opsional, biar kelihatan skillnya) */}
-                            <div className="flex flex-wrap gap-2 mt-auto">
-                                {project.tech.slice(0, 4).map((t, i) => (
-                                    <span key={i} className="text-[10px] bg-white/5 px-2 py-1 rounded text-brand-gray border border-white/5">{t}</span>
-                                ))}
-                            </div>
+                            <p className="line-clamp-3">{project.desc}</p>
                         </div>
 
-                        {/* TOMBOL LINK LANGSUNG KE GITHUB PROYEK */}
-                        <a 
-                            href={project.linkCode} 
-                            target="_blank" 
-                            className="text-brand-red font-bold text-sm uppercase self-start hover:text-brand-light-red hover:tracking-wide transition-all flex items-center gap-2 mt-4"
+                        {/* Klik Tombol -> Buka Modal */}
+                        <button 
+                            onClick={() => openProject(project)} 
+                            className="text-brand-red font-bold text-sm uppercase self-start hover:text-brand-light-red hover:tracking-wide transition-all flex items-center gap-2 mt-auto"
                         >
                             VIEW PROJECT <i className="fas fa-chevron-right text-xs"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             ))}
         </div>
       </div>
+
+      {/* --- MODAL OVERLAY (TETAP ADA) --- */}
+      {modalOpen && activeProject && (
+        <div className="fixed inset-0 bg-black/85 z-[10000] flex justify-center items-center backdrop-blur-sm animate-fade-in p-4" onClick={closeModal}>
+            <div className="bg-[#141414] w-full max-w-[700px] max-h-[90vh] rounded-2xl border border-white/10 relative overflow-y-auto transform transition-transform shadow-2xl shadow-brand-red/10" onClick={(e) => e.stopPropagation()}>
+                
+                {/* Tombol Close */}
+                <span className="absolute top-4 right-5 text-3xl text-white cursor-pointer hover:text-brand-red z-10" onClick={closeModal}>&times;</span>
+                
+                {/* Gambar Modal */}
+                <div className="w-full h-[250px] md:h-[350px] overflow-hidden bg-black">
+                    <img src={activeProject.img} alt="Project" className="w-full h-full object-contain md:object-cover"/>
+                </div>
+                
+                {/* Isi Modal */}
+                <div className="p-8">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                        <h2 className="font-syne text-3xl text-white font-bold">{activeProject.title}</h2>
+                        
+                        {/* LINK KE GITHUB PROYEK SPESIFIK */}
+                        <a 
+                            href={activeProject.linkCode} 
+                            target="_blank"
+                            className="flex items-center gap-2 bg-brand-red hover:bg-brand-light-red text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-brand-red/20"
+                        >
+                            <i className="fab fa-github text-lg"></i> SEE CODE
+                        </a>
+                    </div>
+
+                    <p className="text-brand-red font-bold text-lg mb-4 border-b border-white/10 pb-4">{activeProject.role}</p>
+                    
+                    <p className="text-brand-gray leading-relaxed mb-8 text-lg">
+                        {activeProject.desc}
+                    </p>
+
+                    <div>
+                        <h4 className="text-white font-bold mb-3 uppercase tracking-wider text-sm">Technologies Used:</h4>
+                        <div className="flex flex-wrap gap-2">
+                            {activeProject.tech.map((t: string) => (
+                                <span key={t} className="bg-brand-charcoal text-brand-light-gray px-3 py-1.5 rounded-md text-sm border border-white/10 hover:border-brand-red/50 transition-colors">
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      )}
     </section>
   );
 }
