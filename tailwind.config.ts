@@ -18,13 +18,13 @@ const config: Config = {
         'brand-light-gray': '#d1d1d1',
       },
       fontFamily: {
-         // Menambahkan font yang dipakai
          sans: ['Inter', 'sans-serif'],
          syne: ['var(--font-syne)', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-green': 'pulse-green 2s infinite cubic-bezier(0.66, 0, 0, 1)',
+        'scroll': 'scroll 30s linear infinite',
       },
       keyframes: {
         float: {
@@ -34,6 +34,10 @@ const config: Config = {
         'pulse-green': {
           '0%': { width: '100%', height: '100%', opacity: '0.7' },
           '100%': { width: '300%', height: '300%', opacity: '0' },
+        },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         }
       }
     },

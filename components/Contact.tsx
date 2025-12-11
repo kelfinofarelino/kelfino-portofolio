@@ -74,11 +74,11 @@ export default function Contact() {
                         {/* Input nama name="name" itu penting untuk Web3Forms */}
                         <div>
                             <label className="block mb-2 font-semibold text-white">Full Name</label>
-                            <input type="text" name="name" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all" required placeholder="John Doe"/>
+                            <input type="text" name="name" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all" required placeholder="Farelino Kelfino"/>
                         </div>
                         <div>
                             <label className="block mb-2 font-semibold text-white">Email Address</label>
-                            <input type="email" name="email" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all" required placeholder="john@example.com"/>
+                            <input type="email" name="email" className="w-full p-4 bg-[#2a2a2a]/70 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all" required placeholder="kelfino@example.com"/>
                         </div>
                         <div>
                             <label className="block mb-2 font-semibold text-white">Message</label>

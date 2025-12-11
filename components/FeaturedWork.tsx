@@ -10,25 +10,22 @@ const projectsData: any = {
         desc: 'Health data analysis using Python & Pandas for stroke prediction.',
         tech: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
         linkCode: '#',
-        linkLive: '#'
     },
     'DONOXYGEN': {
-        title: 'DONOXYGEN',
+        title: 'Donoxygen',
         role: 'UI/UX, Front End',
         img: '/assets/image/project2.png',
         desc: 'A community platform for replanting trees through donations to restore oxygen.',
-        tech: ['Figma', 'HTML', 'CSS', 'JS'],
+        tech: ['Figma', 'HTML', 'CSS', 'JS', 'Bootstrap', 'PHP'],
         linkCode: '#',
-        linkLive: '#'
     },
     'Saasina': {
-        title: 'Saasina Business Plan',
-        role: 'Marketing Planner',
+        title: 'Bakery Management System',
+        role: 'Marketing & Strategy',
         img: '/assets/image/project3.png',
-        desc: 'Business strategy and marketing content for digital startups.',
-        tech: ['Marketing', 'SEO', 'Content Strategy'],
+        desc: 'A SaaS platform to streamline bakery operations and boost sales.',
+        tech: ['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP'],
         linkCode: '#',
-        linkLive: '#'
     }
 };
 
@@ -53,7 +50,7 @@ export default function FeaturedWork() {
         <div className="flex justify-between items-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-brand-red after:to-brand-light-red">FEATURED WORK</h2>
             <a href="#" className="text-brand-light-red hover:text-white font-bold text-lg flex items-center transition-colors group">
-                VIEW MORE <i className="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                VIEW MORE ON GITHUB <i className="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
 
@@ -92,7 +89,6 @@ export default function FeaturedWork() {
                         <h2 className="font-syne text-3xl text-white">{activeProject.title}</h2>
                         <div className="flex gap-3">
                             <a href={activeProject.linkCode} className="text-white bg-white/10 px-4 py-2 rounded text-sm hover:bg-brand-red transition-colors"><i className="fab fa-github mr-2"></i> Code</a>
-                            <a href={activeProject.linkLive} className="text-white bg-white/10 px-4 py-2 rounded text-sm hover:bg-brand-red transition-colors"><i className="fas fa-external-link-alt mr-2"></i> Live</a>
                         </div>
                     </div>
                     <p className="text-brand-red font-bold mb-3">{activeProject.role}</p>

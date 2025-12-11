@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["700"], variable: '--font-syne' });
 
 export const metadata: Metadata = {
+  // PENTING: Tambahkan ini agar gambar OG (Preview Link) terbaca di sosmed
+  metadataBase: new URL('https://kelfino.my.id'),
+
   title: {
     default: "Farelino Kelfin | Portfolio",
     template: "%s | Farelino Kelfin"
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Kelfino Portfolio",
     images: [
       {
-        url: "/assets/image/g2.png", // Pastikan gambar ini ada
+        url: "/assets/image/g2.png",
         width: 800,
         height: 600,
       },
@@ -30,10 +33,12 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/icon.png", // Ganti dengan favicon kamu
+    icon: "/icon.png",
+  },
+  verification: {
+    google: "QNRD12HvAn5I9ktIjolB89WybBWKxDCOY1wWT3tiNc8",
   },
 };
-//
 
 export default function RootLayout({
   children,
