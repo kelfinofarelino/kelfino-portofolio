@@ -6,9 +6,34 @@ const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["700"], variable: '--font-syne' });
 
 export const metadata: Metadata = {
-  title: "Kelfino | Full Stack Developer",
-  description: "Portfolio of Farelino Kelfin",
+  title: {
+    default: "Farelino Kelfin | Portfolio",
+    template: "%s | Farelino Kelfin"
+  },
+  description: "Portofolio resmi Muhammad Farelino Kelfin (Kelfino). Mahasiswa Teknik Informatika UPN 'Veteran' Yogyakarta, Web Developer, dan Content Creator dari Indonesia.",
+  keywords: ["Muhammad Farelino Kelfin", "Farelino Kelfin", "Kelfino", "Farelino", "Web Developer Jogja", "UPN Veteran Yogyakarta", "Content Creator", "Next.js Developer"],
+  authors: [{ name: "Farelino Kelfin", url: "https://kelfino.my.id" }],
+  creator: "Farelino Kelfin",
+  openGraph: {
+    title: "Farelino Kelfin | Portfolio",
+    description: "Official Portfolio of Farelino Kelfin. Exploring Code & Creativity.",
+    url: "https://kelfino.my.id",
+    siteName: "Kelfino Portfolio",
+    images: [
+      {
+        url: "/assets/image/g2.png", // Pastikan gambar ini ada
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  icons: {
+    icon: "/icon.png", // Ganti dengan favicon kamu
+  },
 };
+//
 
 export default function RootLayout({
   children,
