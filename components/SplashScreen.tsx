@@ -51,7 +51,7 @@ export default function SplashScreen() {
       <div className="text-4xl font-extrabold text-center leading-tight">
         KELFINO<span className="text-brand-light-red">.</span>
       </div>
-      <div className="mt-2 text-brand-gray tracking-[2px] text-sm">farelino.kelfino.my.id</div>
+      <div className="mt-2 text-brand-gray tracking-[2px] text-sm">kelfino.my.id</div>
     </div>
   );
 }
