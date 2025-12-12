@@ -9,7 +9,7 @@ const projectsData = [
         img: '/assets/image/project1.jpg',
         desc: 'Health data analysis using Python & Pandas for stroke prediction.',
         tech: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
-        linkCode: 'https://github.com/kelfinofarelino/', 
+        linkCode: 'https://github.com/kelfinofarelino/stroke-data-analysis', 
     },
     {
         id: 'DONOXYGEN',
