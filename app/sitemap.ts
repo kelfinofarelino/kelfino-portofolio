@@ -10,13 +10,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
-    // Kalau nanti kamu punya halaman terpisah (bukan scroll), baru tambahkan disini.
-    // Contoh:
-    // {
-    //   url: `${baseUrl}/blog`,
-    //   lastModified: new Date(),
-    //   changeFrequency: 'weekly',
-    //   priority: 0.8,
-    // },
   ]
 }
