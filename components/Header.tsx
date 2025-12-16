@@ -35,8 +35,27 @@ export default function Header() {
       `}
     >
       <div className="w-[90%] max-w-[1200px] mx-auto px-5 flex justify-between items-center relative">
-        <a href="#home" className="text-2xl font-extrabold text-white flex items-center relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-8 after:h-[3px] after:bg-brand-red z-[10001]">
-          FARELINO <span className="text-brand-red ml-1">KELFINO.</span>
+        
+        <a href="#home" className="flex items-center gap-3 group z-[10001] cursor-pointer">
+            
+            <div className="relative w-10 h-10 md:w-12 md:h-12">
+                <div className="absolute inset-0 bg-brand-red rounded-full opacity-0 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500 ease-out"></div>
+                
+                <div className="relative w-full h-full rounded-full border-2 border-white/10 group-hover:border-brand-red overflow-hidden bg-white/10 backdrop-blur-sm transition-colors duration-300 shadow-lg">
+                    <img 
+                        src="/assets/image/icon.png" 
+                        alt="Logo Kelfino" 
+                        className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:rotate-[360deg]" 
+                    />
+                </div>
+            </div>
+
+            <div className="flex flex-col relative">
+                <span className="text-xl md:text-2xl font-extrabold text-white leading-none">
+                    FARELINO <span className="text-brand-red">KELFINO.</span>
+                </span>
+                <span className="absolute -bottom-1 left-0 w-6 h-[3px] bg-brand-red transition-all duration-500 ease-out group-hover:w-full"></span>
+            </div>
         </a>
         
         <div className="md:hidden text-white text-2xl cursor-pointer z-[10001]" onClick={() => setMenuOpen(!menuOpen)}>

@@ -51,12 +51,13 @@ export default function Home() {
       <div className="w-[90%] max-w-[1200px] mx-auto px-5 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         <div className="z-10 animate-on-scroll order-2 lg:order-1 text-center lg:text-left">
+            <div className="h-[10px] md:h-[20px] w-full transition-all"></div>  
             <div className="inline-flex items-center gap-2.5 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full text-green-500 text-sm font-semibold mb-5 hover:-translate-y-0.5 transition-all cursor-default">
                 <div className="w-2 h-2 bg-green-500 rounded-full relative after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:rounded-full after:bg-green-500 after:animate-pulse-green after:-z-10"></div>
                 <span>Available for Work</span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6 min-h-[100px] md:min-h-[250px]">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6">
                 <span>
                     HELLO WORLD!<br/>
                     THIS IS <span className="bg-gradient-to-r from-brand-red to-brand-light-red bg-clip-text text-transparent">
@@ -84,6 +85,9 @@ export default function Home() {
                 <span className="absolute top-0 left-0 w-0 h-full bg-brand-red transition-all duration-300 group-hover:w-full -z-10"></span>
                 VIEW MY WORK <i className="fas fa-arrow-right ml-2.5"></i>
             </a>
+
+            <div className="h-[80px] md:h-[120px] w-full transition-all"></div>
+
         </div>
 
         <div className="relative z-10 animate-float flex justify-center animate-on-scroll order-1 lg:order-2">

@@ -48,7 +48,7 @@ export default function Skills() {
                              />
                         </div>
                         <div className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:-bottom-8 transition-all duration-300 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
-                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded border border-brand-red/30">
+                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded-2xl border border-brand-red/30">
                                 {skill.name}
                             </span>
                         </div>
@@ -65,7 +65,7 @@ export default function Skills() {
                              />
                         </div>
                          <div className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:-bottom-8 transition-all duration-300 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
-                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded border border-brand-red/30">
+                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded-2xl border border-brand-red/30">
                                 {skill.name}
                             </span>
                         </div>
