@@ -47,17 +47,9 @@ export default function Home() {
   }, [displayedText, isDeleting, currentRoleIndex, typingSpeed]);
 
   return (
-    // PERBAIKAN 1: pt-24 (HP) dan md:pt-32 (Laptop). 
-    // Jarak atas dikurangi supaya tidak terlalu kosong di laptop.
     <section id="home" className="min-h-screen flex items-start pt-24 md:pt-32 relative overflow-hidden bg-gradient-to-br from-brand-dark to-brand-charcoal">
       <div className="w-[90%] max-w-[1200px] mx-auto px-5 grid grid-cols-1 lg:grid-cols-2 gap-12">
         
-        {/* --- BAGIAN KIRI (TEKS) --- */}
-        {/* PERBAIKAN 2 (ANTI GOYANG):
-            - min-h-[800px] (Mobile): Dibuat sangat tinggi supaya aman menampung teks panjang di HP.
-            - md:min-h-[600px] (Laptop): Cukup 600px karena teks laptop jarang wrapping (turun baris).
-            - justify-start: Konten mulai dari atas (gap otomatis pindah ke bawah).
-        */}
         <div className="z-10 animate-on-scroll order-2 lg:order-1 text-center lg:text-left min-h-[800px] md:min-h-[600px] flex flex-col justify-start">
             
             <div className="inline-flex items-center gap-2.5 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full text-green-500 text-sm font-semibold mb-5 hover:-translate-y-0.5 transition-all cursor-default self-center lg:self-start">
@@ -96,7 +88,6 @@ export default function Home() {
             
         </div>
 
-        {/* --- BAGIAN KANAN (FOTO) --- */}
         <div className="relative z-10 animate-float flex justify-center items-start pt-4 lg:pt-10 animate-on-scroll order-1 lg:order-2">
             <div className="relative w-full max-w-[320px] lg:max-w-[420px] aspect-square group">
                 <Image 
