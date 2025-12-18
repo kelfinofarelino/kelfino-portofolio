@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import SpotlightCard from "./SpotlightCard";
 
 export default function About() {
   return (
@@ -16,8 +17,8 @@ export default function About() {
 
         <div className="w-[90%] max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6">
             
-            {/* BOX 1: PHOTO*/}
-            <div className="md:col-span-1 md:row-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-brand-red/30 transition-all duration-500 min-h-[250px]">
+            {/* BOX 1: PHOTO */}
+            <SpotlightCard className="order-first md:order-none md:col-span-1 md:row-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 group hover:border-brand-red/30 transition-all duration-500 min-h-[250px]">
                 <Image 
                     src="/assets/image/about.png" 
                     alt="Farelino Profile"
@@ -25,15 +26,15 @@ export default function About() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-5 left-5">
+                <div className="absolute bottom-5 left-5 z-20"> {/* Tambah z-20 biar diatas spotlight */}
                     <span className="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20">
                         OPEN FOR WORK
                     </span>
                 </div>
-            </div>
+            </SpotlightCard>
 
             {/* BOX 2: MAIN BIO */}
-            <div className="md:col-span-2 md:row-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-8 relative overflow-hidden group hover:border-brand-red/30 transition-all duration-500">
+            <SpotlightCard className="md:col-span-2 md:row-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-8 group hover:border-brand-red/30 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/10 blur-[50px] rounded-full -mr-10 -mt-10"></div>
                 
                 <div className="relative z-10">
@@ -46,10 +47,10 @@ export default function About() {
                         I specialize in building <span className="text-white">modern web applications</span> with a focus on smooth interactions (like this website!) and robust backend systems. Currently exploring the world of AI & Data Analytics.
                     </p>
                 </div>
-            </div>
+            </SpotlightCard>
 
             {/* BOX 3: BASED IN JOGJA */}
-            <div className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 relative overflow-hidden group hover:border-brand-red/30 transition-all duration-500 flex flex-col justify-between min-h-[200px]">
+            <SpotlightCard className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 group hover:border-brand-red/30 transition-all duration-500 flex flex-col justify-between min-h-[200px]">
                 <div className="absolute inset-0 opacity-30 grayscale group-hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 <div className="absolute inset-0 bg-brand-dark/60"></div>
 
@@ -63,10 +64,10 @@ export default function About() {
                 <div className="relative z-10 mt-4">
                     <span className="text-xs text-brand-gray bg-black/50 px-3 py-1.5 rounded-lg border border-white/10">UTC+7 (WIB)</span>
                 </div>
-            </div>
+            </SpotlightCard>
 
             {/* BOX 4: SPOTIFY - DANCING IN THE FLAMES */}
-            <div className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 flex flex-col justify-between relative overflow-hidden group hover:border-[#1DB954]/50 transition-all duration-500">
+            <SpotlightCard spotlightColor="rgba(29, 185, 84, 0.2)" className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 flex flex-col justify-between group hover:border-[#1DB954]/50 transition-all duration-500">
                 
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
                 <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#1DB954]/10 blur-[50px] rounded-full group-hover:bg-[#1DB954]/30 transition-all duration-500"></div>
@@ -106,13 +107,13 @@ export default function About() {
                     <span className="text-sm">Play on Spotify</span>
                 </a>
 
-            </div>
+            </SpotlightCard>
 
             {/* BOX 5: SOCIAL CONNECT */}
-            <div className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 flex flex-col justify-center relative overflow-hidden group hover:border-brand-red/30 transition-all duration-500">
-                <h3 className="text-xl font-bold text-white mb-6">Let's Connect</h3>
+            <SpotlightCard className="md:col-span-1 bg-brand-charcoal rounded-[2rem] border border-white/5 p-6 flex flex-col justify-center group hover:border-brand-red/30 transition-all duration-500">
+                <h3 className="text-xl font-bold text-white mb-6 relative z-10">Let's Connect</h3>
                 
-                <div className="flex flex-wrap gap-3 justify-start">
+                <div className="flex flex-wrap gap-3 justify-start relative z-10">
                     
                     <a href="https://www.linkedin.com/in/farelino-kelfin-117637ab/" target="_blank" className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white hover:bg-[#0077b5] hover:scale-110 transition-all duration-300 border border-white/10">
                         <i className="fab fa-linkedin-in text-xl"></i>
@@ -130,7 +131,7 @@ export default function About() {
                         <i className="fab fa-spotify text-xl"></i>
                     </a>
                 </div>
-            </div>
+            </SpotlightCard>
 
         </div>
     </section>
