@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"; 
+import SmoothScroll from "@/components/SmoothScroll"; 
 
 const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["700"], variable: '--font-syne' });
@@ -72,6 +73,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} ${syne.variable}`}>
         
+        <SmoothScroll />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
