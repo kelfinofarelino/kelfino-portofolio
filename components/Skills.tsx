@@ -1,3 +1,6 @@
+import Image from "next/image";
+import SpotlightCard from "./SpotlightCard"; 
+
 export default function Skills() {
   const skills = [
     { name: "Next.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
@@ -42,39 +45,31 @@ export default function Skills() {
 
             <div className="flex gap-6 w-max animate-scroll hover:[animation-play-state:paused]" style={{ animationDuration: '35s' }}> 
                 
-                {skills.map((skill, index) => (
-                    <div key={`s1-${index}`} className="group relative w-20 h-20 bg-brand-charcoal rounded-2xl border border-white/5 flex items-center justify-center p-4 cursor-pointer transition-all hover:border-brand-red/50 hover:shadow-[0_0_15px_rgba(178,34,34,0.3)] hover:-translate-y-1">
-                        <div className="relative w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300">
-                             <img 
-                                src={skill.img} 
-                                alt={skill.name} 
-                                className="w-full h-full object-contain"
-                             />
-                        </div>
-                        <div className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:-bottom-8 transition-all duration-300 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
-                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded-2xl border border-brand-red/30">
+                {[...skills, ...skills].map((skill, index) => (
+                    <div 
+                        key={`${skill.name}-${index}`} 
+                        className="group relative w-20 h-20 cursor-pointer transition-all hover:-translate-y-1"
+                    >
+                        <SpotlightCard 
+                            className="w-full h-full bg-brand-charcoal rounded-2xl border border-white/5 flex items-center justify-center p-4 hover:border-brand-red/50 hover:shadow-[0_0_15px_rgba(178,34,34,0.3)]"
+                        >
+                            <div className="relative w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300">
+                                <img 
+                                    src={skill.img} 
+                                    alt={skill.name} 
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        </SpotlightCard>
+
+                        <div className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:-bottom-10 transition-all duration-300 left-1/2 -translate-x-1/2 whitespace-nowrap z-50 pointer-events-none">
+                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded-2xl border border-brand-red/30 shadow-lg">
                                 {skill.name}
                             </span>
                         </div>
                     </div>
                 ))}
 
-                {skills.map((skill, index) => (
-                    <div key={`s2-${index}`} className="group relative w-20 h-20 bg-brand-charcoal rounded-2xl border border-white/5 flex items-center justify-center p-4 cursor-pointer transition-all hover:border-brand-red/50 hover:shadow-[0_0_15px_rgba(178,34,34,0.3)] hover:-translate-y-1">
-                        <div className="relative w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300">
-                             <img 
-                                src={skill.img} 
-                                alt={skill.name} 
-                                className="w-full h-full object-contain"
-                             />
-                        </div>
-                         <div className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:-bottom-8 transition-all duration-300 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
-                            <span className="text-[10px] font-bold text-brand-light-red bg-brand-dark/90 px-2 py-1 rounded-2xl border border-brand-red/30">
-                                {skill.name}
-                            </span>
-                        </div>
-                    </div>
-                ))}
             </div>
         </div>
     </section>
