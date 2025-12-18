@@ -31,8 +31,15 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-brand-dark overflow-hidden relative border-b border-white/5">
         
-        <div className="w-[90%] max-w-[1200px] mx-auto px-5 mb-12 text-left">
-             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block mb-16 after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-brand-red after:to-brand-light-red animate-on-scroll">MY SKILLS</h2>
+        <div className="w-[90%] max-w-[1200px] mx-auto px-5 mb-16 text-left">
+             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block mb-6 animate-on-scroll">
+                SKILLS
+                <span className="absolute -bottom-2 left-0 w-[60px] h-1.5 bg-gradient-to-r from-brand-red to-brand-light-red rounded-full"></span>
+             </h2>
+             
+             <p className="text-brand-gray text-lg max-w-2xl leading-relaxed animate-on-scroll delay-100">
+                A curated collection of technologies and tools I use to build digital products.
+             </p>
         </div>
 
         <div className="relative w-full">

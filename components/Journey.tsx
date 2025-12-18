@@ -9,9 +9,18 @@ export default function Journey() {
 
   return (
     <section id="journey" className="py-24 bg-brand-dark-charcoal relative">
+      <div className="w-[90%] max-w-[1200px] mx-auto px-5 mb-16 text-left">
+             <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block mb-6 animate-on-scroll">
+                JOURNEY
+                <span className="absolute -bottom-2 left-0 w-[60px] h-1.5 bg-gradient-to-r from-brand-red to-brand-light-red rounded-full"></span>
+             </h2>
+             
+             <p className="text-brand-gray text-lg max-w-2xl leading-relaxed animate-on-scroll delay-100">
+                From Lens to Logic: Transitioning from capturing moments behind the lens to building systems in software engineering.
+             </p>
+      </div>
+
       <div className="w-[90%] max-w-[1200px] mx-auto px-5">
-        <h2 className="text-4xl md:text-5xl font-extrabold relative inline-block mb-16 after:content-[''] after:absolute after:-bottom-2.5 after:left-0 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-brand-red after:to-brand-light-red animate-on-scroll">MY JOURNEY</h2>
-        
         <div className="timeline relative max-w-[1000px] mx-auto">
           {items.map((item, index) => (
             <div key={index} className={`timeline-item flex ${index % 2 === 0 ? 'justify-center md:justify-start md:pr-[calc(50%+30px)]' : 'justify-center md:justify-end md:pl-[calc(50%+30px)]'} mb-16 relative pl-[70px] md:pl-0 animate-on-scroll`}>
