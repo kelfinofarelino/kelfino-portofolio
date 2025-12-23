@@ -26,11 +26,6 @@ export default function About() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-5 left-5 z-20"> {/* Tambah z-20 biar diatas spotlight */}
-                    <span className="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20">
-                        OPEN FOR WORK
-                    </span>
-                </div>
             </SpotlightCard>
 
             {/* BOX 2: MAIN BIO */}
